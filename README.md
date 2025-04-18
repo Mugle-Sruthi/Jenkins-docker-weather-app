@@ -1,33 +1,35 @@
 Automated CI/CD Pipeline for a Dockerized Weather Forecast App Using Jenkins
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 This project demonstrates an Automated CI/CD pipeline for a Dockerized Weather Forecast App using Jenkins. It integrates Docker, Jenkins, and a Flask-based weather application that fetches data from the OpenWeatherMap API, providing users with real-time weather forecasts. This project automates the build, push, and deployment of the application using a Jenkins pipeline.
-
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Table of Contents
 Overview
 
-Features
+1.Features
 
-Technologies Used
+2.Technologies Used
 
-Project Structure
+3.Project Structure
 
-Prerequisites
+4.Prerequisites
 
-Setup Instructions
+5.Setup Instructions
 
-Dockerization Details
+6.Dockerization Details
 
-CI/CD Pipeline Details
+7.CI/CD Pipeline Details
 
-Usage
+8.Usage
 
-Contributing
+9.Contributing
 
-License
+10.License
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Overview
 The Weather Forecast App is a simple Flask-based web application that allows users to search for weather details of any city. The app is containerized using Docker, ensuring consistency across different environments. It features an Automated CI/CD pipeline set up using Jenkins to automate the build, push, and deployment process, ensuring seamless and rapid deployment of new changes.
 
-Features
+1.Features
 Weather Forecast: View weather information for any city, including temperature, humidity, wind speed, pressure, and more.
 
 Real-time Data: Fetches real-time weather data from the OpenWeatherMap API.
@@ -37,8 +39,9 @@ User-Friendly Interface: Simple, clean, and easy-to-navigate UI.
 CI/CD Pipeline: Automates the process of building, testing, and deploying the application using Jenkins.
 
 Dockerized App: The application is containerized with Docker to ensure portability and consistency.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Technologies Used
+2.Technologies Used
 Backend: Python, Flask
 
 API: OpenWeatherMap API for weather data
@@ -53,10 +56,9 @@ CI/CD: Jenkins
 
 Version Control: GitHub
 
-Project Structure
-bash
-Copy
-Edit
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+3.Project Structure
+
 .
 ├── Dockerfile                 # Docker setup for the app
 ├── app.py                     # Flask application logic
@@ -66,7 +68,9 @@ Edit
 └── templates/                 # HTML templates
 └── .env                       # Environment variables
 └── .gitignore                 # Git ignore file
-Prerequisites
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+4.Prerequisites
 Ensure you have the following installed:
 
 Docker
@@ -77,7 +81,8 @@ Git
 
 OpenWeatherMap API key (stored in .env file)
 
-Setup Instructions
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+5.Setup Instructions
 Clone the Repository
 Clone the repository to your local machine:
 
@@ -110,35 +115,37 @@ Checkout: Pulls the latest code from GitHub.
 Build & Push Docker Image: Builds the Docker image and pushes it to Docker Hub.
 
 Deploy: Stops any previous instances of the app and runs the new Docker container.
-
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Dockerization Details
 The Dockerfile defines the steps to containerize the application. Here's the Dockerfile used:
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+6.dockerfile
 
-dockerfile
-
-# Use Python 3.12 as the base image
+--> Use Python 3.12 as the base image
 FROM python:3.12-slim
 
-# Set the working directory inside the container
+ -->Set the working directory inside the container
 WORKDIR /app
 
-# Copy the requirements file and install dependencies
+--> Copy the requirements file and install dependencies
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
-# Copy the rest of the application code
+-->Copy the rest of the application code
 COPY . .
 
-# Expose port 5000 for the Flask app
+--> Expose port 5000 for the Flask app
 EXPOSE 5000
 
-# Set the environment variable for Flask
+--> Set the environment variable for Flask
 ENV FLASK_APP=app.py
 ENV FLASK_ENV=production
 
-# Start the Flask application
+--> Start the Flask application
 CMD ["flask", "run", "--host=0.0.0.0"]
-CI/CD Pipeline Details
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+7.CI/CD Pipeline Details
 The Jenkins pipeline automates the entire process, including building, pushing, and deploying the Dockerized app. The pipeline is defined in the jenkins-pipeline.groovy file, which includes the following stages:
 
 Checkout: Pulls the latest code from GitHub.
@@ -147,7 +154,8 @@ Build & Push Docker Image: Builds the Docker image and pushes it to Docker Hub.
 
 Deploy: Deploys the new image by stopping the current container and running the new one.
 
-Usage
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+8.Usage
 To run the application in development mode:
 
 
@@ -159,10 +167,11 @@ Website: http://localhost:5000
 
 To stop the container:
 
-docker ps  # Find the container ID
+docker ps  Find the container ID
 docker stop <container_id>
-Contributing
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+9.Contributing
 Contributions are welcome! Please fork the repository, create a new branch for your feature or fix, and submit a pull request.
-
-License
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+10.License
 This project is licensed under the MIT License. See the LICENSE file for more details.
