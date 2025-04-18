@@ -169,6 +169,9 @@ To stop the container:
 
 docker ps  Find the container ID
 docker stop <container_id>
+
+---->>FOR MORE DETAILS 
+KINDLY REFER REPORT FILE 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 9.Contributing
 Contributions are welcome! Please fork the repository, create a new branch for your feature or fix, and submit a pull request.
