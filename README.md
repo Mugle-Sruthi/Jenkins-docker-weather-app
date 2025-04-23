@@ -1,5 +1,6 @@
 Automated CI/CD Pipeline for a Dockerized Weather Forecast App Using Jenkins
 This project demonstrates an Automated CI/CD pipeline for a Dockerized Weather Forecast App using Jenkins. It integrates Docker, Jenkins, and a Flask-based weather application that fetches data from the OpenWeatherMap API, providing users with real-time weather forecasts. The project automates the build, push, and deployment process using a Jenkins pipeline.
+
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Table of Contents
 Overview
@@ -25,7 +26,9 @@ Contributing
 License
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Overview
+
 The Weather Forecast App is a simple Flask-based web application that allows users to search for weather details for any city. The app is containerized using Docker, ensuring consistency across various environments. This project features an Automated CI/CD pipeline using Jenkins to automate the process of building, pushing, and deploying the application.
+
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Features
 Weather Forecast: Allows users to view weather information for any city, including temperature, humidity, wind speed, pressure, etc.
@@ -100,6 +103,7 @@ Add the Jenkins pipeline script (jenkins-pipeline.groovy) to the pipeline config
 Configure Environment Variables
 Create a .env file in the root directory with your OpenWeatherMap API key:
 WEATHER_API_KEY=your_api_key_here
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Dockerization Details
 The Dockerfile defines the steps to containerize the application. Below is the content of the Dockerfile used:
@@ -140,13 +144,21 @@ Deploy: Deploys the new Docker image by stopping any previous instances and runn
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Usage
+
 To run the application in development mode:
+
 docker build -t weather-app .
+
 docker run -p 5000:5000 weather-app
+
 -Access the application in your browser: http://localhost:5000
+
 To stop the container:
+
 docker ps  # Find the container ID
+
 docker stop <container_id>
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Contributing
 Contributions are welcome! Please follow these steps to contribute:
@@ -158,6 +170,7 @@ Create a new branch for your feature or fix.
 Make your changes and test them.
 
 Submit a pull request.
+
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 License
 This project is licensed under the MIT License. See the LICENSE file for more details.
