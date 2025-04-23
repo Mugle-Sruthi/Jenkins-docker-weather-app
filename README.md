@@ -1,8 +1,11 @@
-Automated CI/CD Pipeline for a Dockerized Weather Forecast App Using Jenkins
+# Automated CI/CD Pipeline for a Dockerized Weather Forecast App Using Jenkins
+
+
 This project demonstrates an Automated CI/CD pipeline for a Dockerized Weather Forecast App using Jenkins. It integrates Docker, Jenkins, and a Flask-based weather application that fetches data from the OpenWeatherMap API, providing users with real-time weather forecasts. The project automates the build, push, and deployment process using a Jenkins pipeline.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Table of Contents
+# Table of Contents
+
 Overview
 
 Features
@@ -26,24 +29,25 @@ Contributing
 License
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Overview
+# Overview
 
 The Weather Forecast App is a simple Flask-based web application that allows users to search for weather details for any city. The app is containerized using Docker, ensuring consistency across various environments. This project features an Automated CI/CD pipeline using Jenkins to automate the process of building, pushing, and deploying the application.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Features
-Weather Forecast: Allows users to view weather information for any city, including temperature, humidity, wind speed, pressure, etc.
+# Features
+1.Weather Forecast: Allows users to view weather information for any city, including temperature, humidity, wind speed, pressure, etc.
 
-Real-Time Data: Fetches weather data from the OpenWeatherMap API.
+2.Real-Time Data: Fetches weather data from the OpenWeatherMap API.
 
-User-Friendly Interface: A simple, clean, and easy-to-navigate UI.
+3.User-Friendly Interface: A simple, clean, and easy-to-navigate UI.
 
-CI/CD Pipeline: Automates the process of building, testing, and deploying the application using Jenkins.
+4.CI/CD Pipeline: Automates the process of building, testing, and deploying the application using Jenkins.
 
-Dockerized App: Containerized using Docker for portability and consistency across environments.
+5.Dockerized App: Containerized using Docker for portability and consistency across environments.
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Technologies Used
+# Technologies Used
+
 Backend: Python, Flask
 
 API: OpenWeatherMap API for fetching weather data
@@ -57,7 +61,7 @@ CI/CD: Jenkins
 Version Control: GitHub
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Project Structure
+# Project Structure
 .
 ├── Dockerfile                 # Docker setup for the app
 ├── app.py                     # Flask application logic
@@ -73,7 +77,8 @@ Project Structure
 └── .gitignore                 # Git ignore file
 .
 ------------------------------------------------------------------------___----------------------------------------------------------------------------------------------------------------------
-Prerequisites
+# Prerequisites
+
 Before setting up the project, make sure you have the following tools installed:
 
 Docker: To containerize the application.
@@ -85,7 +90,8 @@ Git: For version control and collaboration.
 OpenWeatherMap API Key: You’ll need an API key to fetch weather data. Sign up here and save it in the .env file.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Setup Instructions
+# Setup Instructions
+
 Clone the Repository
 Clone the repository to your local machine:
 git clone https://github.com/your-username/jenkins-docker-weather-app
@@ -106,7 +112,8 @@ Create a .env file in the root directory with your OpenWeatherMap API key:
 WEATHER_API_KEY=your_api_key_here
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Dockerization Details
+# Dockerization Details
+
 The Dockerfile defines the steps to containerize the application. Below is the content of the Dockerfile used:
 
 dockerfile
@@ -134,7 +141,8 @@ ENV FLASK_ENV=production
 CMD ["flask", "run", "--host=0.0.0.0"]
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-CI/CD Pipeline Details
+# CI/CD Pipeline Details
+
 The Jenkins pipeline automates the entire process of building, pushing, and deploying the Dockerized app. The pipeline is defined in the jenkins-pipeline.groovy file, and the stages are as follows:
 
 Checkout: Pulls the latest code from GitHub.
@@ -144,7 +152,7 @@ Build & Push Docker Image: Builds the Docker image and pushes it to Docker Hub.
 Deploy: Deploys the new Docker image by stopping any previous instances and running the new one.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Usage
+# Usage
 
 To run the application in development mode:
 
@@ -161,7 +169,8 @@ docker ps  # Find the container ID
 docker stop <container_id>
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Contributing
+# Contributing
+
 Contributions are welcome! Please follow these steps to contribute:
 
 Fork the repository.
@@ -173,7 +182,8 @@ Make your changes and test them.
 Submit a pull request.
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-License
+# License
+
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
 
